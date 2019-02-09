@@ -1,26 +1,22 @@
 #include<stdio.h>
 #include<string.h>
-int any(char *s1, char *s2);
+void delete(char *s1, char c);
 int main() {
-	char s1[10], s2[10];
+	char s1[10], c;
 	gets(s1);
-	gets(s2);
-	printf("matching index is %d", any(s1, s2));
+	scanf_s("%c", &c);
+	delete(s1, c);
 	getch();
 	return 0;
 }
 
-int any(char *s1, char *s2)
+void delete(char *s2, char c)
 {
-	int len1 = strlen(s1);
-	int len2 = strlen(s2);
-	int len;
-	if (len1 > len2)
-		len = len2;
-	else
-		len = len1;
-	for (int i = 0; i < len; i++)
-		if (*(s1 + i) == *(s2 + i))
-			return i;
-	return 0;
+	while (*s2 != '\0') {
+		if (*s2 == c)
+			*s2 = '';
+		s2++;
+	}
+
+	printf("%s", s2);
 }
