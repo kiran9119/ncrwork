@@ -6,7 +6,7 @@ DWORD dwexitcode;
 DWORD WINAPI FUNC(LPVOID str)
 {
 	for (BOOL i = 0; i<10; i++)
-		cout << "i=" << i<<endl;
+		cout << "i=" << i << endl;
 	DWORD dwexitcode = 10;
 	ExitThread(dwexitcode);
 	return 0;
@@ -22,13 +22,13 @@ int _tmain()
 		NULL,//Function PArameter
 		CREATE_SUSPENDED,//CREATION FLAG
 		NULL);
-	
-	//Sleep(2000);
-	//ResumeThread(H1);//it resumes thread
-		//WaitForSingleObject(H1, INFINITE);
-		DWORD dwexitcode = 0;
-		GetExitCodeThread(H1, &dwexitcode);
-		cout <<"dwexitcode"<<dwexitcode;
+
+	Sleep(2000);
+	ResumeThread(H1);//it resumes thread
+	WaitForSingleObject(H1, INFINITE);
+	DWORD dwexitcode = 0;
+	GetExitCodeThread(H1, &dwexitcode);
+	cout << "dwexitcode" << dwexitcode;
 	getchar();
 
 }
