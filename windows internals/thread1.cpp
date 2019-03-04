@@ -4,8 +4,8 @@
 using namespace std;
 DWORD WINAPI FUNC(LPVOID str)
 {
-	for(BOOL i=0;i<10;i++)
-	cout<< "i="<<i;
+	for (BOOL i = 0; i<10; i++)
+		cout << "i=" << i<<endl;
 
 	return 0;
 }
@@ -21,8 +21,8 @@ int _tmain()
 		CREATE_SUSPENDED,//CREATION FLAG
 		NULL);
 	Sleep(5000);
-	ResumeThread(H1;)
-	WaitForSingleObject(H1, INFINITE);
-		getchar();
+	ResumeThread(H1);//it resumes thread
+		WaitForSingleObject(H1, INFINITE);
+	getchar();
 
 }
