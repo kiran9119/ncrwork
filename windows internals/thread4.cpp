@@ -6,7 +6,7 @@ int i;
 DWORD WINAPI FUNC(LPVOID str)
 {
 
-		cout << "i++=" << i++ << endl;
+	i++;
 	//DWORD dwexitcode = 10;
 
 	return 15;
@@ -23,17 +23,17 @@ int _tmain()
 			0,//Stack Size
 			FUNC,//FUNCTION NAME
 			NULL,//Function PArameter
-			CREATE_SUSPENDED,//CREATION FLAG
+			0,//CREATION FLAG
 			NULL);
 		H1[1] = CreateThread(NULL,//Security attribute
 			0,//Stack Size
 			FUNC,//FUNCTION NAME
 			NULL,//Function PArameter
-			CREATE_SUSPENDED,//CREATION FLAG
+			0,//CREATION FLAG
 			NULL);
-		WaitForMultipleObject(2, H1, 1, INFINITE);
+		WaitForMultipleObjects(2, H1, 1, INFINITE);
 		cout << "the global i is: " << i << endl;
-		if (i == 1)
+		if (i !=2)
 		{
 			cout << "inconsistent" << endl;
 			break;
