@@ -38,7 +38,7 @@ int _tmain()
 			NULL,//Function PArameter
 			0,//CREATION FLAG
 			NULL);
-		WaitForMultipleObjects(2, H1, 1, INFINITE);
+		WaitFor(2, H1, 1, INFINITE);
 		cout << "the global i is: " << var << endl;
 		if (var != 2)
 		{
