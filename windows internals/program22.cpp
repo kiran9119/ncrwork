@@ -21,7 +21,7 @@ int _tmain()
 		CREATE_SUSPENDED,//CREATION FLAG
 		NULL);
 	Sleep(5000);
-	//WaitForMultipleObject(2, H1, FALSE, 1000);
+	WaitForMultipleObject(2, H1, FALSE, 1000);
 	H1[1] = CreateThread(NULL,//Security attribute
 		0,//Stack Size
 		FUNC,//FUNCTION NAME
@@ -29,11 +29,11 @@ int _tmain()
 		CREATE_SUSPENDED,//CREATION FLAG
 		NULL);
 	Sleep(5000);
-	//ResumeThread(H1);
-		//WaitForMultipleObject(2,H1,TRUE, 1000);
+	ResumeThread(H1);
+		WaitForMultipleObject(2,H1,TRUE, 1000);
 	WaitForMultipleObject(2, H1, TRUE, INFINITE);
-	//WaitForMultipleObject(2, H1, FALSE, INFINITE);
-	//WaitForMultipleObject(2, H1, FALSE, 2000);
+	////WaitForMultipleObject(2, H1, FALSE, INFINITE);
+	WaitForMultipleObject(2, H1, FALSE, 2000);
 		
 	getchar();
 
